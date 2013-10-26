@@ -127,7 +127,6 @@
       [cd setRecordID:[NSString stringWithFormat:@"%@", [self scannedResult]]];
       NSLog(@"QR2CD: Record ID: %@", [self scannedResult]);
    }
-
 }
 
 
