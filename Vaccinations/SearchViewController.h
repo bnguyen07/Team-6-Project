@@ -18,8 +18,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *motherMaidenName;
 
 
-
-
 //Brian: search function
 //October 23, 2013
 
