@@ -36,7 +36,7 @@
 	// Do any additional setup after loading the view.
     
    NSLog(@"ChildDetails Record ID: %@", [self recordID]);
-   if ([[self recordID] isEqualToString:NULL]) {
+   if ([[self recordID] isEqualToString:NULL] || [[self recordID] isEqualToString:@""]) {
         
         _lastNameTF.text = [childDict objectForKey:@"last_name"];
         _firstNameTF.text = [childDict objectForKey:@"first_name"];
@@ -62,30 +62,31 @@
        
        if (data) {
           self.patients = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-          NSLog(@"patients: %@", [self patients]);
+          NSLog(@"patients: %@", _patients);
           if (self.patients == NULL) {
              NSLog(@"Check the searchPatients.php file for correct DB");
           }
 
           for (int i = 0 ; i < [self.patients count]; i++) {
-             if ([[self recordID] isEqual: [[self.patients objectAtIndex:i] objectForKey:@"patient_id"]]) {
+             if ([[self recordID] isEqual: [[_patients objectAtIndex:i] objectForKey:@"patient_id"]]) {
                 NSLog(@"Record found. Loading fields");
-                  _lastNameTF.text = [[self.patients objectAtIndex:i] objectForKey:@"last_name"];
-                  _firstNameTF.text = [[self.patients objectAtIndex:i]objectForKey:@"first_name"];
-                  _MotherMaidenName.text = [[self.patients objectAtIndex:i] objectForKey:@"mothers_name"];
-                  _FatherName.text = [[self.patients objectAtIndex:i]objectForKey:@"fathers_name"];
-                  _recordNumber.text = [[self.patients objectAtIndex:i] objectForKey:@"patient_id"];
-                  _BirthStreetNumber.text = [[self.patients objectAtIndex:i] objectForKey:@"birth_street_number"];
-                  _BirthStreetName.text = [[self.patients objectAtIndex:i] objectForKey:@"birth_street_name"];
-                  _BirthCity.text = [[self.patients objectAtIndex:i] objectForKey:@"birth_city"];
-                  _BirthState.text = [[self.patients objectAtIndex:i] objectForKey:@"birth_state"];
-                  _BirthZipcode.text = [[self.patients objectAtIndex:i] objectForKey:@"birth_zipcode"];
-                  _CurrentStreetNumber.text = [[self.patients objectAtIndex:i] objectForKey:@"current_street_number"];
-                  _CurrentStreetName.text = [[self.patients objectAtIndex:i] objectForKey:@"current_street_name"];
-                  _CurrentCity.text = [[self.patients objectAtIndex:i] objectForKey:@"current_city"];
-                  _CurrentState.text = [[self.patients objectAtIndex:i] objectForKey:@"current_state"];
-                  _CurrentZipcode.text = [[self.patients objectAtIndex:i] objectForKey:@"current_zipcode"];
+                  _lastNameTF.text = [[_patients objectAtIndex:i] objectForKey:@"last_name"];
+                  _firstNameTF.text = [[_patients objectAtIndex:i]objectForKey:@"first_name"];
+                  _MotherMaidenName.text = [[_patients objectAtIndex:i] objectForKey:@"mothers_name"];
+                  _FatherName.text = [[_patients objectAtIndex:i]objectForKey:@"fathers_name"];
+                  _recordNumber.text = [[_patients objectAtIndex:i] objectForKey:@"patient_id"];
+                  _BirthStreetNumber.text = [[_patients objectAtIndex:i] objectForKey:@"birth_street_number"];
+                  _BirthStreetName.text = [[_patients objectAtIndex:i] objectForKey:@"birth_street_name"];
+                  _BirthCity.text = [[_patients objectAtIndex:i] objectForKey:@"birth_city"];
+                  _BirthState.text = [[_patients objectAtIndex:i] objectForKey:@"birth_state"];
+                  _BirthZipcode.text = [[_patients objectAtIndex:i] objectForKey:@"birth_zipcode"];
+                  _CurrentStreetNumber.text = [[_patients objectAtIndex:i] objectForKey:@"current_street_number"];
+                  _CurrentStreetName.text = [[_patients objectAtIndex:i] objectForKey:@"current_street_name"];
+                  _CurrentCity.text = [[_patients objectAtIndex:i] objectForKey:@"current_city"];
+                  _CurrentState.text = [[_patients objectAtIndex:i] objectForKey:@"current_state"];
+                  _CurrentZipcode.text = [[_patients objectAtIndex:i] objectForKey:@"current_zipcode"];
                 [self viewWillAppear:YES];
+                break;
              } // end if
           } // end for
        } else {
@@ -95,6 +96,10 @@
        } // end if..else data
     } // end else
 } // end viewDidLoad
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+}
 
 - (void)didReceiveMemoryWarning
 {

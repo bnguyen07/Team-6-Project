@@ -81,12 +81,8 @@
                                                  otherButtonTitles:nil, nil];
     [invalidLogin show];
     return;
-    
-    
-     [self performSegueWithIdentifier:@"login2childsearchtab" sender:self];
-
-   
 }
+
 - (IBAction)dismissKeyboard:(id)sender {
     [_Username resignFirstResponder];
     [_Password resignFirstResponder] ;

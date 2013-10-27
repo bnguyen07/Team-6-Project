@@ -374,6 +374,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Subash Dantuluri";
 				TargetAttributes = {
+					110A55141811FFEC00C372E3 = {
+						DevelopmentTeam = C26APVFB2X;
+					};
 					110A55351811FFEC00C372E3 = {
 						TestTargetID = 110A55141811FFEC00C372E3;
 					};
@@ -620,10 +623,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vaccinations/Vaccinations-Prefix.pch";
 				INFOPLIST_FILE = "Vaccinations/Vaccinations-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -634,10 +640,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vaccinations/Vaccinations-Prefix.pch";
 				INFOPLIST_FILE = "Vaccinations/Vaccinations-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

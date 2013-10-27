@@ -79,8 +79,8 @@
 }
 
 - (IBAction)rescanPressed:(id)sender {
-   [self.scannedResult setString:@""];
-   self.gotResult = NO;
+    _scannedResult = [[NSMutableString alloc] initWithFormat:@""];
+    self.gotResult = NO;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
@@ -110,11 +110,10 @@
       self.gotResult = YES;
       [_scannedResult appendString:result.text];
       NSLog(@"scanned result: %@", result.text);
-//       [self prepareForSegue:[[UIStoryboardSegue alloc] initWithIdentifier:@"QR2CD" source:self destination:[[UIViewController alloc] init] bundle:nil]sender:nil];
-      
+
       // Vibrate
       AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-      [self performSegueWithIdentifier:@"QR2CD" sender:nil];
+      [self performSegueWithIdentifier:@"QR2CD" sender:self];
    }
 }
 
