@@ -102,6 +102,7 @@ const int BPPCOLORIMG = 24;
     if (sourceType == UIImagePickerControllerSourceTypeCamera)
     {
         imagePickerController.showsCameraControls = YES;
+        [self.tabBarController.tabBar setHidden:YES];
     }
     
     self.imagePickerController = imagePickerController;
@@ -113,7 +114,6 @@ const int BPPCOLORIMG = 24;
 
 - (void)takePhoto:(id)sender
 {
-    [self.tabBarController.tabBar setHidden:YES];
     [self.imagePickerController takePicture];
 }
 
