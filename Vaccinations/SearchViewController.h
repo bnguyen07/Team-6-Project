@@ -25,6 +25,4 @@
 @property (nonatomic, strong) NSMutableArray *patients;
 @property(strong, nonatomic) NSMutableArray *selectedPatient;
 
-
-
 @end
