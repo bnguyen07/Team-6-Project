@@ -172,7 +172,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.21901137430000001" green="0.74885722229999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="p8H-rk-7b5"/>
+                    <navigationItem key="navigationItem" id="p8H-rk-7b5">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="rPC-oZ-r6w"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="DB2-Az-SGr" id="dfB-0Z-20t"/>
                         <segue destination="LPU-rK-E0G" kind="push" identifier="QR2CD" id="Q7M-ny-MEu"/>
@@ -197,7 +199,7 @@
                         <segue destination="lfH-Hp-UED" kind="relationship" relationship="viewControllers" id="mqI-So-9bN"/>
                         <segue destination="arO-t7-ExH" kind="relationship" relationship="viewControllers" id="6q3-j6-1Rf"/>
                         <segue destination="GRV-dK-hwe" kind="relationship" relationship="viewControllers" id="5Qx-Jj-NQ3"/>
-                        <segue destination="cU6-Hd-k1n" kind="relationship" relationship="viewControllers" id="yEp-ii-rTt"/>
+                        <segue destination="CRE-t2-8Gp" kind="relationship" relationship="viewControllers" id="yEp-ii-rTt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ATA-Kp-irC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1347,45 +1349,64 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="2352" y="850"/>
         </scene>
-        <!--Scan View Controller - Scan-->
+        <!--Scan View Controller-->
         <scene sceneID="MB4-gw-ZST">
             <objects>
-                <viewController id="cU6-Hd-k1n" customClass="ScanViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="cU6-Hd-k1n" customClass="ScanViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Gh5-Qs-ejl"/>
-                        <viewControllerLayoutGuide type="bottom" id="fsC-HQ-Iew"/>
+                        <viewControllerLayoutGuide type="top" id="JIn-xM-xSb"/>
+                        <viewControllerLayoutGuide type="bottom" id="dHK-2C-8Ke"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Njv-at-r4j">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view key="view" contentMode="scaleToFill" id="3Kq-QY-4tU">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1aX-4G-gK7">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4zt-OA-wPi">
+                                <rect key="frame" x="55" y="102" width="659" height="746"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cg-E1-xx5">
+                                <rect key="frame" x="0.0" y="916" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <navigationItem id="u2O-8g-fHH">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="1ls-qR-6Iz">
-                                            <connections>
-                                                <action selector="logoutAction:" destination="cU6-Hd-k1n" id="bsC-hg-FS4"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <barButtonItem title="Photo Library" id="Yu3-oX-ymd">
+                                        <connections>
+                                            <action selector="photoLibraryButtonPressed:" destination="cU6-Hd-k1n" id="6UX-92-gpc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Perform OCR" id="E6R-ID-3dL">
+                                        <connections>
+                                            <action selector="performOcrButtonPressed:" destination="cU6-Hd-k1n" id="xRc-wr-G5d"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ZxP-yk-DOi"/>
+                                    <barButtonItem title="Take Photo" id="IsW-Xi-ms7">
+                                        <connections>
+                                            <action selector="showImagePickerForCamera:" destination="cU6-Hd-k1n" id="3F8-au-enT"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
-                            </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scan Paper" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYl-r0-Ima">
-                                <rect key="frame" x="315" y="495" width="90" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scan" image="navbutton-scannew.png" id="MVn-9R-yLp"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="2gh-R9-fwo">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="UuQ-kZ-Sqk">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="4zt-OA-wPi" id="hb4-Px-E69"/>
+                        <outlet property="takePhotoButton" destination="IsW-Xi-ms7" id="Msh-Pl-HrC"/>
+                        <outlet property="toolBar" destination="6cg-E1-xx5" id="hpN-Us-xDY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xx0-Ek-AMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2352" y="2088"/>
+            <point key="canvasLocation" x="3326" y="2088"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wtX-s6-0zV">
@@ -1480,6 +1501,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4b-9y-mcm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2352" y="-1750"/>
+        </scene>
+        <!--Navigation Controller - Scan-->
+        <scene sceneID="XCY-TE-h6W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CRE-t2-8Gp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Scan" image="navbutton-scannew.png" id="MVn-9R-yLp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rDg-5v-3uW">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cU6-Hd-k1n" kind="relationship" relationship="rootViewController" id="WEi-pz-gaY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iad-fm-Mg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2352" y="2088"/>
         </scene>
     </scenes>
     <resources>

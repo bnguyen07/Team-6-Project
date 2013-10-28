@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ScanViewController : UIViewController
+@interface ScanViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+- (IBAction)photoLibraryButtonPressed:(id)sender;
+- (IBAction)performOcrButtonPressed:(id)sender;
 - (IBAction)logoutAction:(id)sender;
 
 @end
