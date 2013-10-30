@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Forgot View Controller-->
@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EN2-8H-tTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="1918"/>
+            <point key="canvasLocation" x="948" y="2474"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -71,6 +71,7 @@
                                 </state>
                                 <connections>
                                     <action selector="dismissKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CJh-1q-jUK"/>
+                                    <segue destination="rCO-MB-p6X" kind="modal" identifier="login2childsearchtab" id="Lho-VS-qYk"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZBh-jE-knM">
@@ -123,7 +124,6 @@
                         <outlet property="ForgotPassword" destination="eyB-IF-JbX" id="VnS-S2-VwS"/>
                         <outlet property="Password" destination="HbI-oU-O9h" id="vnu-g7-IrL"/>
                         <outlet property="Username" destination="ZBh-jE-knM" id="GIU-Iw-PPZ"/>
-                        <segue destination="2Dd-xa-RX9" kind="modal" identifier="login2childsearchtab" id="Wis-bP-pWx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -133,7 +133,7 @@
         <!--Scan View Controller-->
         <scene sceneID="fVd-ep-S2U">
             <objects>
-                <viewController id="Mml-EL-jnh" customClass="QRScanViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRScanViewController" id="Mml-EL-jnh" customClass="QRScanViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c0q-mu-BAY"/>
                         <viewControllerLayoutGuide type="bottom" id="2uL-2F-h9p"/>
@@ -184,6 +184,67 @@
             </objects>
             <point key="canvasLocation" x="3344" y="-1750"/>
         </scene>
+        <!--Child Search ContainerVC-->
+        <scene sceneID="VT5-Fj-arK">
+            <objects>
+                <viewController id="rCO-MB-p6X" customClass="ChildSearchContainerVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qte-YN-Dy2"/>
+                        <viewControllerLayoutGuide type="bottom" id="w0i-rJ-1lu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f87-9b-5zV">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztU-Rw-uJM">
+                                <rect key="frame" x="112" y="956" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="QR Scan">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="qrScanAction:" destination="rCO-MB-p6X" eventType="touchUpInside" id="psm-yY-nGC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oj6-dE-WyQ">
+                                <rect key="frame" x="257" y="956" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchAction:" destination="rCO-MB-p6X" eventType="touchUpInside" id="50y-0D-0Uu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZl-Tn-3pS">
+                                <rect key="frame" x="410" y="956" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" Create New">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newAction:" destination="rCO-MB-p6X" eventType="touchUpInside" id="8vk-vi-uFz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIY-qo-LJ8">
+                                <rect key="frame" x="579" y="956" width="35" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Scan">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanningAction:" destination="rCO-MB-p6X" eventType="touchUpInside" id="miy-i5-QGz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WpG-EE-Mdk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uw7-YJ-WnQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124" y="-9"/>
+        </scene>
         <!--Tab Bar Controller - ChildSearchTabBar-->
         <scene sceneID="Und-1b-i6h">
             <objects>
@@ -195,21 +256,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="lfH-Hp-UED" kind="relationship" relationship="viewControllers" id="mqI-So-9bN"/>
-                        <segue destination="arO-t7-ExH" kind="relationship" relationship="viewControllers" id="6q3-j6-1Rf"/>
-                        <segue destination="GRV-dK-hwe" kind="relationship" relationship="viewControllers" id="5Qx-Jj-NQ3"/>
-                        <segue destination="CRE-t2-8Gp" kind="relationship" relationship="viewControllers" id="yEp-ii-rTt"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ATA-Kp-irC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="668"/>
+            <point key="canvasLocation" x="1052" y="1212"/>
         </scene>
         <!--Search View Controller - Search-->
         <scene sceneID="adW-pd-Txp">
             <objects>
-                <viewController id="arO-t7-ExH" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="arO-t7-ExH" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tjC-BR-GDC"/>
                         <viewControllerLayoutGuide type="bottom" id="xeR-iv-nCy"/>
@@ -219,7 +274,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0Z-eg-bsN">
-                                <rect key="frame" x="226" y="880" width="317" height="60"/>
+                                <rect key="frame" x="226" y="785" width="317" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="button-search.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -242,7 +297,7 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHm-qK-LoM">
-                                <rect key="frame" x="402" y="985" width="97" height="30"/>
+                                <rect key="frame" x="383" y="866" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dzN-Ev-3X7"/>
@@ -251,25 +306,25 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KW7-6Z-V5e">
-                                <rect key="frame" x="632" y="985" width="97" height="30"/>
+                                <rect key="frame" x="613" y="866" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3py-Qn-rHH">
-                                <rect key="frame" x="342" y="989" width="41" height="21"/>
+                                <rect key="frame" x="323" y="870" width="41" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Zip Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U93-ev-jdQ">
-                                <rect key="frame" x="545" y="989" width="71" height="21"/>
+                                <rect key="frame" x="526" y="870" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fBM-Iu-rQZ">
-                                <rect key="frame" x="183" y="986" width="97" height="30"/>
+                                <rect key="frame" x="164" y="867" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="fKF-9i-NWZ"/>
@@ -278,7 +333,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cO-Wd-0c2">
-                                <rect key="frame" x="138" y="990" width="31" height="21"/>
+                                <rect key="frame" x="119" y="871" width="31" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -288,7 +343,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Bvj-XX-OXF">
-                                <rect key="frame" x="38" y="186" width="692" height="651"/>
+                                <rect key="frame" x="38" y="186" width="692" height="578"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="labelbar-green.png" translatesAutoresizingMaskIntoConstraints="NO" id="YT7-o2-3VN">
@@ -975,7 +1030,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Create New View Controller - Create New-->
         <scene sceneID="Aje-eZ-42w">
             <objects>
-                <viewController id="GRV-dK-hwe" customClass="CreateNewViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateNewViewController" id="GRV-dK-hwe" customClass="CreateNewViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oKq-OT-QL5"/>
                         <viewControllerLayoutGuide type="bottom" id="z6g-dG-EYe"/>
@@ -1352,7 +1407,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Scan View Controller-->
         <scene sceneID="MB4-gw-ZST">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="cU6-Hd-k1n" customClass="ScanViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScanViewController" hidesBottomBarWhenPushed="YES" id="cU6-Hd-k1n" customClass="ScanViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JIn-xM-xSb"/>
                         <viewControllerLayoutGuide type="bottom" id="dHK-2C-8Ke"/>

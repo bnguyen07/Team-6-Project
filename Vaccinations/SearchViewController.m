@@ -8,6 +8,7 @@
 
 #import "SearchViewController.h"
 #import "ChildListViewController.h"
+#import "ChildSearchContainerVC.h"
 
 #define kGetUrlForPatients @"http://localhost/searchPatients.php"
 
@@ -17,6 +18,7 @@
 
 @implementation SearchViewController
 
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -58,7 +60,7 @@
 }
 
 - (IBAction)logoutAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate logout];
 }
 
 

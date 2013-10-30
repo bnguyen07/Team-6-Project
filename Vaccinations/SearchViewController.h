@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SearchProtocol
+- (void)logout;
+@end
+
+
 @interface SearchViewController : UIViewController
 - (IBAction)logoutAction:(id)sender;
 @property (nonatomic, strong) NSMutableArray *users;
@@ -17,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *motherMaidenName;
 
+@property (weak) id <SearchProtocol> delegate;
 
 //Brian: search function
 //October 23, 2013

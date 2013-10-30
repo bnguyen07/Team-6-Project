@@ -24,6 +24,8 @@ const int BPPCOLORIMG = 24;
 
 @implementation ScanViewController
 
+@synthesize delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -58,7 +60,7 @@ const int BPPCOLORIMG = 24;
 }
 
 - (IBAction)logoutAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate logout];
 }
 
 /** Acess the photo library */

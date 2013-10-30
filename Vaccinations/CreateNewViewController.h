@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CreateNewProtocol
+- (void)logout;
+@end
+
+
 @interface CreateNewViewController : UIViewController
 - (IBAction)logoutAction:(id)sender;
 
@@ -34,6 +39,8 @@
 
 
 @property (strong, nonatomic)NSURLConnection *postNewRecord;
+
+@property (weak) id <CreateNewProtocol> delegate;
 
 - (IBAction)createNewRecord:(id)sender;
 

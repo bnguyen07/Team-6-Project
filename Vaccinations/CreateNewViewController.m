@@ -54,6 +54,8 @@
 
 @implementation CreateNewViewController
 
+@synthesize delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -183,7 +185,7 @@ withCurrentStreetName:(NSString*) currentStreetName withCurrentCity:(NSString*) 
 
 
 - (IBAction)logoutAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate logout];
 }
 
 @end

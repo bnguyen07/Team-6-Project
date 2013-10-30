@@ -22,6 +22,7 @@
 #pragma mark - QR Scanner View Controller Methods
 
 @implementation QRScanViewController
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -75,7 +76,7 @@
 }
 
 - (IBAction)logoutAction:(id)sender {
-   [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate logout];
 }
 
 - (IBAction)rescanPressed:(id)sender {
