@@ -52,6 +52,7 @@
 		11C3BAF71815EE6600F25C2A /* navbutton-vaccinesdue.png in Resources */ = {isa = PBXBuildFile; fileRef = 11C3BAEE1815EE6600F25C2A /* navbutton-vaccinesdue.png */; };
 		11C3BAF81815EE6600F25C2A /* white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11C3BAEF1815EE6600F25C2A /* white.jpg */; };
 		4A8E51E942ED4DA6BB730E31 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DF7E7E53EE43E09BF951C0 /* libPods.a */; };
+		A0133213182096A300D41D61 /* ChildSearchContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0133212182096A300D41D61 /* ChildSearchContainerVC.m */; };
 		A06FDB8518137A3900212BA1 /* ChildDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A06FDB8418137A3900212BA1 /* ChildDetailsViewController.m */; };
 		D318CDB318198C650026DE8F /* ID-10072640.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D318CDB218198C650026DE8F /* ID-10072640.jpg */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,8 @@
 		11C3BAEF1815EE6600F25C2A /* white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = white.jpg; sourceTree = "<group>"; };
 		6604A4F47389415587BE3DAE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		99DF7E7E53EE43E09BF951C0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0133211182096A300D41D61 /* ChildSearchContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildSearchContainerVC.h; sourceTree = "<group>"; };
+		A0133212182096A300D41D61 /* ChildSearchContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildSearchContainerVC.m; sourceTree = "<group>"; };
 		A06FDB8318137A3900212BA1 /* ChildDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildDetailsViewController.h; sourceTree = "<group>"; };
 		A06FDB8418137A3900212BA1 /* ChildDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildDetailsViewController.m; sourceTree = "<group>"; };
 		D318CDB218198C650026DE8F /* ID-10072640.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ID-10072640.jpg"; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 				115E02A31813731B00937F3B /* ChildListViewController.m */,
 				A06FDB8318137A3900212BA1 /* ChildDetailsViewController.h */,
 				A06FDB8418137A3900212BA1 /* ChildDetailsViewController.m */,
+				A0133211182096A300D41D61 /* ChildSearchContainerVC.h */,
+				A0133212182096A300D41D61 /* ChildSearchContainerVC.m */,
 			);
 			name = "Child Search";
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 			files = (
 				110A552F1811FFEC00C372E3 /* ViewController.m in Sources */,
 				112BD0A7181784050041AF00 /* PatientsHistoryListVC.m in Sources */,
+				A0133213182096A300D41D61 /* ChildSearchContainerVC.m in Sources */,
 				115E02A11813707A00937F3B /* ScanViewController.m in Sources */,
 				115E029E1813705400937F3B /* CreateNewViewController.m in Sources */,
 				112BD0AA181787370041AF00 /* VaccineScheduleListVC.m in Sources */,
