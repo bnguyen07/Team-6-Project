@@ -1582,6 +1582,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="button-login.png" width="260" height="60"/>
         <image name="button-search.png" width="260" height="60"/>
         <image name="labelbar-green.png" width="310" height="32"/>
+        <image name="labelbar-green.png" width="310" height="32"/>
+        <image name="labelbar-green.png" width="310" height="32"/>
+        <image name="logo-large.png" width="669" height="133"/>
+        <image name="logo-large.png" width="669" height="133"/>
         <image name="logo-large.png" width="669" height="133"/>
         <image name="navbutton-createnew.png" width="30" height="30"/>
         <image name="navbutton-patienthistory.png" width="30" height="30"/>
@@ -1590,6 +1594,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="navbutton-search.png" width="30" height="30"/>
         <image name="navbutton-vaccineschedule.png" width="26" height="30"/>
         <image name="navbutton-vaccinesdue.png" width="61" height="30"/>
+        <image name="white.jpg" width="1278" height="990"/>
+        <image name="white.jpg" width="1278" height="990"/>
         <image name="white.jpg" width="1278" height="990"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
