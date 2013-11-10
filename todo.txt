@@ -10,6 +10,6 @@ _ After Login, if you a Physician, you have the Options
 		Change Password => Update Database
 		Change Clinic => Update Clinic
 _ Child Detail Page => Save => Update to Database
-_ View Vaccination
-_ Vaccination Due => when you click on the vaccine => update to database => Patient History should change according to the database
+Done _ View Vaccination
+Done _  Vaccination Due => when you click on the vaccine => update to database => Patient History should change according to the database
 _ 
