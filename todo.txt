@@ -1,0 +1,15 @@
+_ Add Logo to the Login Screen
+_ Login function: first check with User Table, depends on the user type, if it is 0 => Patient Table
+																			it is 1 => Physician Table
+_ Forgot Page => Done
+_ Register Page => Type in user & password => Check with the User Table if it exists
+					If Password and ConfirmPassword not equal => Alert
+					If the User exists already => Re-enter the User and Password
+					If the User is available => Show a Successful message (User Type always is Patient)
+_ After Login, if you a Physician, you have the Options 
+		Change Password => Update Database
+		Change Clinic => Update Clinic
+_ Child Detail Page => Save => Update to Database
+_ View Vaccination
+_ Vaccination Due => when you click on the vaccine => update to database => Patient History should change according to the database
+_ 
